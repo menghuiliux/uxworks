@@ -4,10 +4,12 @@ body {
     display: flex;
     height: 100vh;
     color: #a4fffc; /* Default text color */
+    overflow-x: hidden;
+    background-color:#222;
 }
 
 .left-column {
-    width: 400px; /* Updated to 400px */
+    width: 400px; /* Default width */
     background-color: #000; /* Black background for the rest of the left column */
     display: flex;
     flex-direction: column;
@@ -30,8 +32,8 @@ body {
 }
 
 .header-square {
-    width: 400px; /* Updated to 400px */
-    height: 400px; /* Updated to 400px */
+    width: 400px; /* Default width */
+    height: 400px; /* Height remains unchanged */
     background-color: #2a2e5d; /* Fallback background color */
     background-image: url('images/headerbg.png'); /* Updated path to the image */
     background-size: cover; /* Ensure the image covers the entire square */
@@ -114,15 +116,15 @@ body {
     align-content: flex-start;
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
     background-color: #222;
+    overflow-y: auto;
 }
 
 .project-square {
     width: 400px;
     height: 400px;
     background-color: #ddd;
-    margin: 10px;
+    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,8 +132,93 @@ body {
     color: #333;
     font-size: 18px;
     transition: background-color 0.3s;
+    z-index: 2;
 }
 
 .project-square:hover {
     background-color: #ccc;
 }
+
+/* social links */
+.social-links {
+    display: flex;
+    gap: 16px; /* Space between icons */
+    margin-bottom: 16px; /* Space below the icons */
+}
+
+.social-icon {
+    width: 24px; /* Adjust icon size as needed */
+    height: 24px;
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+    opacity: 0.7; /* Slight fade on hover */
+}
+
+.mobile{
+    display:none;
+
+}
+
+
+/* Responsive styles */
+
+
+@media (max-width: 700px) {
+
+    body {
+        flex-direction:column;
+        overflow-x: hidden;
+    }
+
+    .left-column {
+        position:relative;
+        width: 100%;
+    }
+
+    .right-column {
+        width: 100%;
+        position: relative;
+        height:auto;
+        overflow-y: initial;
+    }
+
+    .right-column::before{
+        content: '';
+        position: absolute;
+        left: 60px; /* Updated to 60px from the left edge */
+        top: 0;
+        width: 1px; /* Thickness of the line */
+        height: 100%; /* Full height of the page */
+        background-color: #C80C0C; /* Line color */
+        z-index: 0; /* Lower z-index to place it behind text */
+    }
+
+    .contact-info {
+        display:none;
+    }
+
+    .contact-info.mobile{
+        display:flex !important;
+        flex-direction:column;
+        background-color:#000;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        margin-bottom: 0px;
+
+    }
+
+    .contact-info.mobile::before {
+        content: '';
+        position: absolute;
+        left: 60px; /* Updated to 60px from the left edge */
+        top: 0;
+        width: 1px; /* Thickness of the line */
+        height: 100%; /* Full height of the page */
+        background-color: #C80C0C; /* Line color */
+        z-index: 1; /* Lower z-index to place it behind text */
+    }
+
+}
+
