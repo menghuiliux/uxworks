@@ -3,14 +3,13 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
-    color: #a4fffc; /* Default text color */
+    color: #D7FCFF; /* Default text color */
     overflow-x: hidden;
-    background-color:#222;
+    background-color:#2b2b37;
 }
 
 .left-column {
     width: 400px; /* Default width */
-    background-color: #000; /* Black background for the rest of the left column */
     display: flex;
     flex-direction: column;
     position: sticky;
@@ -28,14 +27,14 @@ body {
     width: 1px; /* Thickness of the line */
     height: 100%; /* Full height of the page */
     background-color: #C80C0C; /* Line color */
-    z-index: 1; /* Lower z-index to place it behind text */
+    z-index: 4; /* Lower z-index to place it behind text */
 }
 
 .header-square {
     width: 400px; /* Default width */
     height: 400px; /* Height remains unchanged */
     background-color: #2a2e5d; /* Fallback background color */
-    background-image: url('images/headerbg.png'); /* Updated path to the image */
+    /* background-image: url('images/headerbg.svg'); Updated path to the image */
     background-size: cover; /* Ensure the image covers the entire square */
     background-position: center; /* Center the image */
     display: flex;
@@ -44,7 +43,6 @@ body {
     text-align: left;
     font-size: 24px;
     font-weight: bold;
-    color: #a4fffc; /* Text color */
     margin-bottom: 20px; /* Space between square and intro */
     position: relative; /* Ensure the square is above the line */
     box-sizing: border-box; /* Include padding in width */
@@ -59,39 +57,68 @@ body {
     width: 100%; /* Span full width */
     height: 1px; /* Thickness of the line */
     background-color: #C80C0C; /* Line color */
-    z-index: 2; /* Ensure it's above the header square background */
+    z-index: 4; /* Ensure it's above the header square background */
 }
 
 .logo {
+    z-index: 5;
+    position:absolute;
+}
+
+.blueshape{
+    width: 159px;
+    height: 177px;
+    flex-shrink: 0;
+    border-radius: 0px 48px 0px 0px;
+    background: #112F9B;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 77px;
+    left: 50px;
     z-index: 3;
 }
+
+.greenshape{
+    width: 97px;
+    height: 164px;
+    flex-shrink: 0;
+    border-radius: 0px 48px 0px 0px;
+    background: #1D9C6E;
+    position: absolute;
+    top:51px;
+    left: 25px;
+    z-index:2;
+}
+
 
 .name-title {
     z-index: 3; /* Ensure text is above the background image */
     position: absolute;
-    top: 230px;
+    top: 240px;
     left: 60px;
 }
 
 .name {
-    font-size: 48px;
+    font-size: 36px;
     margin: 0;
-    font-family: "Philosopher", serif;
+    font-family: "Playfair Display", serif;
     font-weight: 700;
 }
 
 .title {
-    font-size: 36px;
-    margin: 20px 0;
-    font-family: "Philosopher", serif;
+    font-size: 24px;
+    margin: 0;
+    font-family: "Playfair Display", serif;
     font-weight: 400;
+    left: 150px;
+    position: relative;
 }
 
 .intro {
     font-size: 16px;
     line-height: 1.6;
     padding-left: 60px; /* Align text to the vertical line */
-    margin: -48px 20px 20px 0;
+    margin: -40px 20px 20px 0;
     position: relative; /* Ensure the intro is above the line */
     z-index: 2; /* Higher z-index to keep it above the line */
     font-family: "Lato", sans-serif;
@@ -109,6 +136,79 @@ body {
     font-weight: 400;
 }
 
+/* button style */
+
+a{
+    text-decoration: none;
+}
+
+.blend-button {
+    position: relative;
+    width: 180px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:visible;
+  }
+  
+  .button-text {
+    color:white;
+    position: relative;
+    z-index: 3; /* Ensures text is on top */
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight:600;
+
+  }
+  
+  .blend-button::before,
+  .blend-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0px 20px 0px 0px;
+    transition: transform 0.2s ease;
+  }
+  
+  .blend-button::before {
+    background: #0028B9; /* Front layer */
+    mix-blend-mode: screen;
+    z-index: 2;
+  }
+  
+  .blend-button::after {
+    background: #00A065; /* Back layer */
+    z-index: 1;
+  }
+  
+  /* Hover effect */
+  .blend-button:hover::before {
+    transform: translate(-4px, -4px);
+  }
+  
+  .blend-button:hover::after {
+    transform: translate(4px, 4px);
+  }
+  
+  /* Click effect */
+  .blend-button:active::before {
+    transform: translate(-2px, -2px);
+  }
+  
+  .blend-button:active::after {
+    transform: translate(2px, 2px);
+  }
+  
+
+
+/*right column*/
+
 .right-column {
     flex-grow: 1;
     display: flex;
@@ -116,28 +216,128 @@ body {
     align-content: flex-start;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #222;
     overflow-y: auto;
+}
+
+
+/*project squares*/
+
+.lolintro {
+    background: #00719A;
+    color:#fff;
 }
 
 .project-square {
     width: 400px;
-    height: 400px;
-    background-color: #ddd;
+    height: 400px;  
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
     transition: background-color 0.3s;
     z-index: 2;
 }
 
-.project-square:hover {
-    background-color: #ccc;
+.square-left {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor:pointer;
+    z-index: 2;
 }
+
+.project-icon {
+    
+    transform:translateY(32px);
+    transition:all 0.3s ease;
+}
+
+
+.project-title {
+    font-size: 32px;
+    font-family:'Segoe UI', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin:32px 0 0 0;
+
+}
+
+.project-title .bold {
+    font-weight:700;
+}
+
+/* Right Panel (Hidden Initially) */
+.square-right {
+    position: relative;
+    width: 440px;
+    height: 100%;
+    background: #24242b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    box-sizing: border-box;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.3s ease, opacity 0.3s ease;
+    z-index: 1;
+}
+
+.project-description {
+    font-size: 18px;
+}
+
+/* Hover Effects */
+.project-square:hover .project-icon {
+    transform: translateY(-20px);
+  }
+  
+  .project-square:hover .project-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Expanded State */
+  .project-square.expanded {
+    width: 840px;
+  }
+
+  .project-square.expanded .square-left{
+    position:relative;
+    width:400px;
+
+  }
+
+  .project-square.expanded .project-icon {
+    transform: translateY(-20px);
+  }
+
+  .project-square.expanded .project-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  
+  .project-square.expanded .square-right {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+
+
+
+
+
+
+
 
 /* social links */
 .social-links {
@@ -202,7 +402,6 @@ body {
     .contact-info.mobile{
         display:flex !important;
         flex-direction:column;
-        background-color:#000;
         padding-top: 20px;
         padding-bottom: 40px;
         margin-bottom: 0px;
