@@ -125,6 +125,17 @@ body {
     font-weight: 400;
 }
 
+.main-menu {
+    position: relative;
+    left: 40px;
+    margin: 40px 0 40px 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 .contact-info {
     font-size: 14px;
     padding-left: 60px; /* Align text to the vertical line */
@@ -204,7 +215,102 @@ a{
   .blend-button:active::after {
     transform: translate(2px, 2px);
   }
+
+
+/*tab buttons */
+
+.tab-button {
+    position: relative;
+    width: 180px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left:20px;
+    overflow:visible;
+}
+
+.tab-button.active{
+    font-weight:700;
+}
+
+.tab-button-text {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Playfair Display", serif;
+    z-index:3;
+}
+
+.tab-button::before,
+.tab-button::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    border-radius: 0px 20px 0px 0px;
+    transition: all 0.3s ease;
+}
+
+.tab-button::before {
+    background: #0028B9; /* Front layer */
+    mix-blend-mode: screen;
+    z-index: 2;
+    transform: translate(0px, 0px);
+}
   
+.tab-button::after {
+    background: #00A065; /* Back layer */
+    z-index: 1;
+    transform: translate(0px, 0px);
+}
+
+.tab-button:hover::before {
+    transform: translate(-4px, -4px);
+    opacity:0.6;
+}
+
+.tab-button:hover::after {
+    transform: translate(4px, 4px);
+    opacity:0.6;
+}
+
+
+.tab-button.active::before,
+.tab-button.active::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 0px 20px 0px 0px;
+    transition: transform 0.3s ease;
+    opacity:1;
+}
+
+.tab-button.active::before {
+    background: #0028B9; /* Front layer */
+    mix-blend-mode: screen;
+    z-index: 2;
+    transform: translate(-4px, -4px);
+}
+  
+.tab-button.active::after {
+    background: #00A065; /* Back layer */
+    z-index: 1;
+    transform: translate(4px, 4px);
+}
+
+.tab-button.active:hover::before {
+    transform: translate(-2px, -2px);
+}
+
+.tab-button.active:hover::after {
+    transform: translate(2px, 2px);
+}
+
 
 
 /*right column*/
