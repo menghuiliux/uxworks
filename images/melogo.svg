@@ -1,0 +1,19 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_370_3117)">
+<path d="M0 22.1738H3.41737C30.2999 22.1738 43.7412 22.1738 54.0089 27.4055C63.0407 32.0074 70.3838 39.3505 74.9857 48.3823C80.2174 58.65 80.2174 72.0913 80.2174 98.9738V120H0V22.1738Z" fill="#5158FF"/>
+<g style="mix-blend-mode:screen">
+<path d="M-11.7393 7.82617H-8.32188C18.5606 7.82617 32.0019 7.82617 42.2697 13.0579C51.3015 17.6598 58.6445 25.0028 63.2464 34.0346C68.4781 44.3024 68.4781 57.7437 68.4781 84.6262V106.957H-11.7393V7.82617Z" fill="#FF0000"/>
+</g>
+<path d="M-9.64258 23.1118H79.6435V106.888H-9.64258V23.1118Z" stroke="#5FF5FF" stroke-width="2"/>
+<rect x="73" y="100" width="10" height="10" fill="black" stroke="#5FF5FF" stroke-width="2"/>
+<rect x="73" y="20" width="10" height="10" fill="black" stroke="#5FF5FF" stroke-width="2"/>
+<path d="M0 67.3913C0 79.3479 12.7766 97.8261 44.3921 97.8261C76.0077 97.8261 94.8913 75.9783 108.815 55.4348M108.815 55.4348L88.7843 58.1522M108.815 55.4348L111.522 74.0218" stroke="#5FF5FF" stroke-width="3"/>
+<rect x="43.5" y="48.0652" width="10.8261" height="10.8261" rx="5.41304" fill="black" stroke="#5FF5FF" stroke-width="3"/>
+<rect x="-9.54395" y="47.8479" width="18.4348" height="18.4348" rx="9.21739" fill="black" stroke="#5FF5FF" stroke-width="7"/>
+</g>
+<defs>
+<clipPath id="clip0_370_3117">
+<rect width="120" height="120" fill="white"/>
+</clipPath>
+</defs>
+</svg>
