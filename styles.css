@@ -279,6 +279,16 @@ a{
     opacity:0.6;
 }
 
+.tab-button:active::before {
+    transform: translate(-2px, -2px);
+    opacity:0.6;
+}
+
+.tab-button:active::after {
+    transform: translate(2px, 2px);
+    opacity:0.6;
+}
+
 
 .tab-button.active::before,
 .tab-button.active::after{
