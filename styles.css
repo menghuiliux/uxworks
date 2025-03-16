@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    height: 100vh;
     color: #FFE4E7; /* Default text color */
     overflow-x: hidden;
     background-color:#2b2b37;
@@ -15,7 +14,6 @@ body {
     position: sticky;
     top: 0;
     height: 100vh;
-    position: relative; /* Needed for the vertical line positioning */
 }
 
 /* Vertical line */
@@ -328,9 +326,9 @@ a{
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 20px;
+    padding: 40px;
+    gap:40px;
     box-sizing: border-box;
-    overflow-y: auto;
 }
 
 
@@ -354,7 +352,6 @@ a{
 .project-square {
     width: 400px;
     height: 400px;  
-    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -498,7 +495,39 @@ a{
 /* Responsive styles */
 
 
-@media (max-width: 700px) {
+/* Responsive styles for project squares */
+
+@media (max-width: 1320px) {
+    
+    .project-title {
+        opacity:1;
+    }
+    
+    .project-icon {
+        transform: translateY(-10px);
+    }
+
+    .project-square.expanded {
+        width: 400px;
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .square-right {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    .project-square.expanded .square-right {
+        width: auto;
+        padding: 24px 40px 40px 40px;
+        gap: 24px;
+    }
+
+
+}
+
+
+@media (max-width: 870px) {
 
     body {
         flex-direction:column;
@@ -554,3 +583,25 @@ a{
 
 }
 
+
+@media (max-width: 480px){
+    .header-square {
+        width:auto;
+    }
+
+    .right-column {
+        align-items: center;
+        justify-content:center;
+    }
+
+    .project-square {
+        margin: 0;
+    }
+
+    .square-left {
+        min-height:400px;
+    }
+
+
+
+}
