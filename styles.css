@@ -466,7 +466,6 @@ a{
     gap: 8px; /* Space between icons */
     margin-bottom: 16px; /* Space below the icons */
     position: relative;
-    left: -6px;
 }
 
 .social-icon svg {
