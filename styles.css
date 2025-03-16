@@ -349,6 +349,16 @@ a{
     color:#004B50;
 }
 
+.arlo {
+    background: #434F59;
+    color:#fff;
+}
+
+.huiji {
+    background:#fff;
+    color:#434f59;
+}
+
 .project-square {
     width: 400px;
     height: 400px;  
