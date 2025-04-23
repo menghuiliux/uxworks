@@ -317,11 +317,11 @@ a{
     transform: translate(2px, 2px);
 }
 
+.tab-content {
+    display: none;
+}
 
-
-/*right column*/
-
-.right-column {
+.tab-content.active {
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
@@ -329,6 +329,12 @@ a{
     padding: 40px;
     gap:40px;
     box-sizing: border-box;
+}
+
+/*right column*/
+
+.right-column {
+    
 }
 
 
@@ -357,6 +363,11 @@ a{
 .huiji {
     background:#fff;
     color:#434f59;
+}
+
+.tentacle{
+    background:#1c1c2d;
+    color:#fff5ea;
 }
 
 .project-square {

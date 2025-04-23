@@ -25,3 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
+
+// tabs
+
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.tab-button');
+    const panels = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and panels
+            buttons.forEach(btn => btn.classList.remove('active'));
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            // Add active class to the clicked button and corresponding panel
+            button.classList.add('active');
+            const tabId = button.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+});
